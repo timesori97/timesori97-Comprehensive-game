@@ -2,7 +2,7 @@ package main;
 
 import java.util.Scanner;
 
-public class BattleGame {
+public class BattleGame { 
 	static Scanner scanner = new Scanner(System.in);
 	static int p1 = 1;
 	static int p2 = 2;
@@ -11,10 +11,10 @@ public class BattleGame {
 	static int p2hp = 24;
 	static int ghp = 4;
 //----------------------------------------------------------
-	static int p1_row = 4; // p1ÀÇ ÃÊ±â Çà À§Ä¡
-	static int p1_col = 0; // p1ÀÇ ÃÊ±â ¿­ À§Ä¡
-	static int p2_row = 0; // p2ÀÇ ÃÊ±â Çà À§Ä¡
-	static int p2_col = 4; // p2ÀÇ ÃÊ±â ¿­ À§Ä¡
+	static int p1_row = 4; // p1ì˜ ì´ˆê¸° í–‰ ìœ„ì¹˜
+	static int p1_col = 0; // p1ì˜ ì´ˆê¸° ì—´ ìœ„ì¹˜
+	static int p2_row = 0; // p2ì˜ ì´ˆê¸° í–‰ ìœ„ì¹˜
+	static int p2_col = 4; // p2ì˜ ì´ˆê¸° ì—´ ìœ„ì¹˜
 	static int[][] map = { { 0, 0, 0, 0, p2 }, 
 						   { 0, 0, 0, 0, 0 }, 
 			               { 0, 0, 0, 0, 0 }, 
@@ -23,21 +23,21 @@ public class BattleGame {
 	
 
 	public static void main(String[] args) {
-		System.out.println("ÀÌµ¿°ú °ø°İÀº ´ë°¢¼± ÀÌ¿Ü·Î »ç¿ëÇÒ ¼ö ÀÖ½À´Ï´Ù");
-		System.out.println("ÀÌµ¿Àº ÇÑÄ­¾¿¸¸ °¡´ÉÇÕ´Ï´Ù");
-		System.out.println("±ÙÁ¢°ø°İÀº 4µ¥¹ÌÁöÀÌ°í ÀûÀÌ ¹Ù·Î ±ÙÃ³¿¡ ÀÖÀ»¶§ °¡´ÉÇÕ´Ï´Ù");
-		System.out.println("¿ø°Å¸® °ø°İÀº 2µ¥¹ÌÁöÀÌ°í ÀûÀÌ µÎ Ä­ Â÷ÀÌ·Î ÀÖÀ»¶§ °¡´ÉÇÕ´Ï´Ù");
-		System.out.println("ÇÃ·¹ÀÌ¾îÀÇ Ã¼·ÂÀº µÑ´Ù 40À¸·Î ½ÃÀÛÀÔ´Ï´Ù.");
+		System.out.println("ì´ë™ê³¼ ê³µê²©ì€ ëŒ€ê°ì„  ì´ì™¸ë¡œ ì‚¬ìš©í•  ìˆ˜ ìˆìŠµë‹ˆë‹¤");
+		System.out.println("ì´ë™ì€ í•œì¹¸ì”©ë§Œ ê°€ëŠ¥í•©ë‹ˆë‹¤");
+		System.out.println("ê·¼ì ‘ê³µê²©ì€ 4ë°ë¯¸ì§€ì´ê³  ì ì´ ë°”ë¡œ ê·¼ì²˜ì— ìˆì„ë•Œ ê°€ëŠ¥í•©ë‹ˆë‹¤");
+		System.out.println("ì›ê±°ë¦¬ ê³µê²©ì€ 2ë°ë¯¸ì§€ì´ê³  ì ì´ ë‘ ì¹¸ ì°¨ì´ë¡œ ìˆì„ë•Œ ê°€ëŠ¥í•©ë‹ˆë‹¤");
+		System.out.println("í”Œë ˆì´ì–´ì˜ ì²´ë ¥ì€ ë‘˜ë‹¤ 40ìœ¼ë¡œ ì‹œì‘ì…ë‹ˆë‹¤.");
 		System.out.println();
 		System.out.println();
 		
 		
 		String button = "";
 		for(int i = 0; i <1000; i++) {
-			if(i%2 == 0 || p1hp >= 0) {
+			if(i%2 == 0 || p1hp >= 0) { //ì§ìˆ˜ì´ë©´ 1ë²ˆ í”Œë ˆì´ì–´ í„´
 				
-					System.out.println("ÇÃ·¹ÀÌ¾î1ÀÇ ÅÏÀÔ´Ï´Ù");
-					System.out.println("1À» ´©¸£¸é ÀÌµ¿ 2¸¦ ´©¸£¸é ±ÙÁ¢°ø°İ 3À» ´©¸£¸é ¿ø°Å¸®°ø°İ");
+					System.out.println("í”Œë ˆì´ì–´1ì˜ í„´ì…ë‹ˆë‹¤");
+					System.out.println("1ì„ ëˆ„ë¥´ë©´ ì´ë™ 2ë¥¼ ëˆ„ë¥´ë©´ ê·¼ì ‘ê³µê²© 3ì„ ëˆ„ë¥´ë©´ ì›ê±°ë¦¬ê³µê²©");
 					button = scanner.nextLine();
 					if(button.equals("1")) {
 						game_p1_movement();
@@ -51,12 +51,12 @@ public class BattleGame {
 				
 				
 			}else {
-				System.out.println("ÇÃ·¹ÀÌ¾î1°¡ Á×¾ú½À´Ï´Ù °ÔÀÓÀ» Á¾·áÇÕ´Ï´Ù.");
+				System.out.println("í”Œë ˆì´ì–´1ê°€ ì£½ì—ˆìŠµë‹ˆë‹¤ ê²Œì„ì„ ì¢…ë£Œí•©ë‹ˆë‹¤.");
 				break;
 			}
-			if(i%2 != 0 || p2hp >= 0) {
-				System.out.println("ÇÃ·¹ÀÌ¾î2ÀÇ ÅÏÀÔ´Ï´Ù");
-				System.out.println("1À» ´©¸£¸é ÀÌµ¿ 2¸¦ ´©¸£¸é ±ÙÁ¢°ø°İ 3À» ´©¸£¸é ¿ø°Å¸®°ø°İ");
+			if(i%2 != 0 || p2hp >= 0) { // í™€ìˆ˜ì¼ ê²½ìš° í”Œë ˆì´ì–´2ì˜ í„´
+				System.out.println("í”Œë ˆì´ì–´2ì˜ í„´ì…ë‹ˆë‹¤");
+				System.out.println("1ì„ ëˆ„ë¥´ë©´ ì´ë™ 2ë¥¼ ëˆ„ë¥´ë©´ ê·¼ì ‘ê³µê²© 3ì„ ëˆ„ë¥´ë©´ ì›ê±°ë¦¬ê³µê²©");
 				button = scanner.nextLine();
 				if(button.equals("1")) {
 					game_p2_movement();
@@ -68,7 +68,7 @@ public class BattleGame {
 					game_p2_ranged_attack();
 				}
 			}else {
-				System.out.println("ÇÃ·¹ÀÌ¾î2°¡ Á×¾ú½À´Ï´Ù °ÔÀÓÀ» Á¾·áÇÕ´Ï´Ù.");
+				System.out.println("í”Œë ˆì´ì–´2ê°€ ì£½ì—ˆìŠµë‹ˆë‹¤ ê²Œì„ì„ ì¢…ë£Œí•©ë‹ˆë‹¤.");
 				break;
 			}
 		}
@@ -77,9 +77,9 @@ public class BattleGame {
 		
 	}
 	
-	public static void game_p1_movement() {
+	public static void game_p1_movement() {// í”Œë ˆì´ì–´1ë²ˆ ì´ë™ ë©”ì„œë“œ
 		printMap();
-        System.out.println("ÇÃ·¹ÀÌ¾î 1 ÀÌµ¿ (w:À§, s:¾Æ·¡, a:¿ŞÂÊ, d:¿À¸¥ÂÊ): ");
+        System.out.println("í”Œë ˆì´ì–´ 1 ì´ë™ (w:ìœ„, s:ì•„ë˜, a:ì™¼ìª½, d:ì˜¤ë¥¸ìª½): ");
 		String move = scanner.nextLine();
 		boolean moved = false;
 		switch(move) {
@@ -89,7 +89,7 @@ public class BattleGame {
 				moved = true;
 				printMap();
 			}else {
-				System.out.println("¹üÀ§¸¦ ¹ş¾î³µ½À´Ï´Ù");
+				System.out.println("ë²”ìœ„ë¥¼ ë²—ì–´ë‚¬ìŠµë‹ˆë‹¤");
 			}
 			break;
 		case"s":
@@ -98,7 +98,7 @@ public class BattleGame {
 				moved = true;
 				printMap();
 			}else {
-				System.out.println("¹üÀ§¸¦ ¹ş¾î³µ½À´Ï´Ù");
+				System.out.println("ë²”ìœ„ë¥¼ ë²—ì–´ë‚¬ìŠµë‹ˆë‹¤");
 			}
 			break;
 		case"a":
@@ -107,7 +107,7 @@ public class BattleGame {
 				moved = true;
 				printMap();
 			}else {
-				System.out.println("¹üÀ§¸¦ ¹ş¾î³µ½À´Ï´Ù");
+				System.out.println("ë²”ìœ„ë¥¼ ë²—ì–´ë‚¬ìŠµë‹ˆë‹¤");
 			}
 			break;
 		case"d":
@@ -116,18 +116,18 @@ public class BattleGame {
 				moved =true;
 				printMap();
 			}else {
-				System.out.println("¹üÀ§¸¦ ¹ş¾î³µ½À´Ï´Ù");
+				System.out.println("ë²”ìœ„ë¥¼ ë²—ì–´ë‚¬ìŠµë‹ˆë‹¤");
 			}
 			break;
 			default:
-				System.out.println("Àß¸øÀÔ·ÂÇÏ¼Ì½À´Ï´Ù w,s,a,dÁß¿¡¼­ ÀÔ·ÂÇÏ½Ê½Ã¿À");
+				System.out.println("ì˜ëª»ì…ë ¥í•˜ì…¨ìŠµë‹ˆë‹¤ w,s,a,dì¤‘ì—ì„œ ì…ë ¥í•˜ì‹­ì‹œì˜¤");
 		}
 		if (moved) {
-            System.out.println("ÇÃ·¹ÀÌ¾î 1ÀÌ ÀÌµ¿Çß½À´Ï´Ù.");
+            System.out.println("í”Œë ˆì´ì–´ 1ì´ ì´ë™í–ˆìŠµë‹ˆë‹¤.");
         }
 	}
-	public static void game_p2_movement() {
-        System.out.println("ÇÃ·¹ÀÌ¾î 2 ÀÌµ¿ (w:À§, s:¾Æ·¡, a:¿ŞÂÊ, d:¿À¸¥ÂÊ): ");
+	public static void game_p2_movement() { // í”Œë ˆì´ì–´2 ì´ë™ ë©”ì„œë“œ
+        System.out.println("í”Œë ˆì´ì–´ 2 ì´ë™ (w:ìœ„, s:ì•„ë˜, a:ì™¼ìª½, d:ì˜¤ë¥¸ìª½): ");
         String move = scanner.nextLine();
 		boolean moved = false;
         switch(move) {
@@ -137,7 +137,7 @@ public class BattleGame {
 				moved = true;
 				printMap();
 			}else {
-				System.out.println("¹üÀ§¸¦ ¹ş¾î³µ½À´Ï´Ù");
+				System.out.println("ë²”ìœ„ë¥¼ ë²—ì–´ë‚¬ìŠµë‹ˆë‹¤");
 			}
 			break;
 		case"s":
@@ -146,7 +146,7 @@ public class BattleGame {
 				moved = true;
 				printMap();
 			}else {
-				System.out.println("¹üÀ§¸¦ ¹ş¾î³µ½À´Ï´Ù");
+				System.out.println("ë²”ìœ„ë¥¼ ë²—ì–´ë‚¬ìŠµë‹ˆë‹¤");
 			}
 			break;
 		case"a":
@@ -155,7 +155,7 @@ public class BattleGame {
 				moved = true;
 				printMap();
 			}else {
-				System.out.println("¹üÀ§¸¦ ¹ş¾î³µ½À´Ï´Ù");
+				System.out.println("ë²”ìœ„ë¥¼ ë²—ì–´ë‚¬ìŠµë‹ˆë‹¤");
 			}
 			break;
 		case"d":
@@ -164,21 +164,21 @@ public class BattleGame {
 				moved = true;
 				printMap();
 			}else {
-				System.out.println("¹üÀ§¸¦ ¹ş¾î³µ½À´Ï´Ù");
+				System.out.println("ë²”ìœ„ë¥¼ ë²—ì–´ë‚¬ìŠµë‹ˆë‹¤");
 			}
 			break;
 			default:
-				System.out.println("Àß¸øÀÔ·ÂÇÏ¼Ì½À´Ï´Ù w,s,a,dÁß¿¡¼­ ÀÔ·ÂÇÏ½Ê½Ã¿À");
+				System.out.println("ì˜ëª»ì…ë ¥í•˜ì…¨ìŠµë‹ˆë‹¤ w,s,a,dì¤‘ì—ì„œ ì…ë ¥í•˜ì‹­ì‹œì˜¤");
 		}
 		if (moved) {
-            System.out.println("ÇÃ·¹ÀÌ¾î 2ÀÌ ÀÌµ¿Çß½À´Ï´Ù.");
+            System.out.println("í”Œë ˆì´ì–´ 2ì´ ì´ë™í–ˆìŠµë‹ˆë‹¤.");
         }
 	}
 	
 	
-	public static void game_p1_melee_acttack() {
+	public static void game_p1_melee_acttack() {// í”Œë ˆì´ì–´1 ê·¼ì ‘ê³µê²©
 		printMap();
-        System.out.println("ÇÃ·¹ÀÌ¾î 1 °ø°İ (i:À§ ±ÙÁ¢°ø°İ, k:¾Æ·¡ ±ÙÁ¢°ø°İ, j:¿ŞÂÊ ±ÙÁ¢°ø°İ, l:¿À¸¥ÂÊ ±ÙÁ¢°ø°İ): ");
+        System.out.println("í”Œë ˆì´ì–´ 1 ê³µê²© (i:ìœ„ ê·¼ì ‘ê³µê²©, k:ì•„ë˜ ê·¼ì ‘ê³µê²©, j:ì™¼ìª½ ê·¼ì ‘ê³µê²©, l:ì˜¤ë¥¸ìª½ ê·¼ì ‘ê³µê²©): ");
 		String attack = scanner.nextLine();
 		boolean attacked = false;
 		switch(attack) {
@@ -189,7 +189,7 @@ public class BattleGame {
 				p1_melee_acttack_sysout();
 				printMap();
 			}else {
-				System.out.println("ºø¸Â¾Ò½À´Ï´Ù");
+				System.out.println("ë¹—ë§ì•˜ìŠµë‹ˆë‹¤");
 			}
 			break;
 		case"k":
@@ -199,7 +199,7 @@ public class BattleGame {
 				p1_melee_acttack_sysout();
 				printMap();
 			}else {
-				System.out.println("ºø¸Â¾Ò½À´Ï´Ù");
+				System.out.println("ë¹—ë§ì•˜ìŠµë‹ˆë‹¤");
 			}
 			break;
 		case"j":
@@ -209,7 +209,7 @@ public class BattleGame {
 				p1_melee_acttack_sysout();
 				printMap();
 			}else {
-				System.out.println("ºø¸Â¾Ò½À´Ï´Ù");
+				System.out.println("ë¹—ë§ì•˜ìŠµë‹ˆë‹¤");
 			}
 			break;
 		case"l":
@@ -219,17 +219,17 @@ public class BattleGame {
 				p1_melee_acttack_sysout();
 				printMap();
 			}else {
-				System.out.println("ºø¸Â¾Ò½À´Ï´Ù");
+				System.out.println("ë¹—ë§ì•˜ìŠµë‹ˆë‹¤");
 			}
 			break;
 			default:
-				System.out.println("Àß¸øÀÔ·ÂÇÏ¼Ì½À´Ï´Ù i,k,j,lÁß¿¡¼­ ÀÔ·ÂÇÏ½Ê½Ã¿À");
+				System.out.println("ì˜ëª»ì…ë ¥í•˜ì…¨ìŠµë‹ˆë‹¤ i,k,j,lì¤‘ì—ì„œ ì…ë ¥í•˜ì‹­ì‹œì˜¤");
 		}
 		
 	}
-	public static void game_p2_melee_acttack() {
+	public static void game_p2_melee_acttack() {// í”Œë ˆì´ì–´2 ê·¼ì ‘ê³µê²©
 		printMap();
-        System.out.println("ÇÃ·¹ÀÌ¾î 2 °ø°İ (i:À§ ±ÙÁ¢°ø°İ, k:¾Æ·¡ ±ÙÁ¢°ø°İ, j:¿ŞÂÊ ±ÙÁ¢°ø°İ, l:¿À¸¥ÂÊ ±ÙÁ¢°ø°İ): ");
+        System.out.println("í”Œë ˆì´ì–´ 2 ê³µê²© (i:ìœ„ ê·¼ì ‘ê³µê²©, k:ì•„ë˜ ê·¼ì ‘ê³µê²©, j:ì™¼ìª½ ê·¼ì ‘ê³µê²©, l:ì˜¤ë¥¸ìª½ ê·¼ì ‘ê³µê²©): ");
 		String attack = scanner.nextLine();
 		boolean attacked = false;
 		switch(attack) {
@@ -240,7 +240,7 @@ public class BattleGame {
 				p2_melee_acttack_sysout();
 				printMap();
 			}else {
-				System.out.println("ºø¸Â¾Ò½À´Ï´Ù");
+				System.out.println("ë¹—ë§ì•˜ìŠµë‹ˆë‹¤");
 			}
 			break;
 		case"k":
@@ -250,7 +250,7 @@ public class BattleGame {
 				p2_melee_acttack_sysout();
 				printMap();
 			}else {
-				System.out.println("ºø¸Â¾Ò½À´Ï´Ù");
+				System.out.println("ë¹—ë§ì•˜ìŠµë‹ˆë‹¤");
 			}
 			break;
 		case"j":
@@ -260,7 +260,7 @@ public class BattleGame {
 				p2_melee_acttack_sysout();
 				printMap();
 			}else {
-				System.out.println("ºø¸Â¾Ò½À´Ï´Ù");
+				System.out.println("ë¹—ë§ì•˜ìŠµë‹ˆë‹¤");
 			}
 			break;
 		case"l":
@@ -270,16 +270,16 @@ public class BattleGame {
 				p2_melee_acttack_sysout();
 				printMap();
 			}else {
-				System.out.println("ºø¸Â¾Ò½À´Ï´Ù ");
+				System.out.println("ë¹—ë§ì•˜ìŠµë‹ˆë‹¤ ");
 			}
 			break;
 			default:
-				System.out.println("Àß¸øÀÔ·ÂÇÏ¼Ì½À´Ï´Ù i,k,j,lÁß¿¡¼­ ÀÔ·ÂÇÏ½Ê½Ã¿À");
+				System.out.println("ì˜ëª»ì…ë ¥í•˜ì…¨ìŠµë‹ˆë‹¤ i,k,j,lì¤‘ì—ì„œ ì…ë ¥í•˜ì‹­ì‹œì˜¤");
 		}
 	}
-	public static void game_p1_ranged_attack() {
+	public static void game_p1_ranged_attack() {//í”Œë ˆì´ì–´1 ì›ê±°ë¦¬ ê³µê²©
 		printMap();
-        System.out.println("ÇÃ·¹ÀÌ¾î 1 °ø°İ (i:À§ ¿ø°Å¸®°ø°İ, k:¾Æ·¡ ¿ø°Å¸®°ø°İ, j:¿ŞÂÊ ¿ø°Å¸®°ø°İ, l:¿À¸¥ÂÊ ¿ø°Å¸®°ø°İ): ");
+        System.out.println("í”Œë ˆì´ì–´ 1 ê³µê²© (i:ìœ„ ì›ê±°ë¦¬ê³µê²©, k:ì•„ë˜ ì›ê±°ë¦¬ê³µê²©, j:ì™¼ìª½ ì›ê±°ë¦¬ê³µê²©, l:ì˜¤ë¥¸ìª½ ì›ê±°ë¦¬ê³µê²©): ");
 		String attack = scanner.nextLine();
 		boolean attacked = false;
 		switch(attack) {
@@ -290,7 +290,7 @@ public class BattleGame {
 				p1_ranged_attack_sysout();
 				printMap();
 			}else {
-				System.out.println("ºø¸Â¾Ò½À´Ï´Ù");
+				System.out.println("ë¹—ë§ì•˜ìŠµë‹ˆë‹¤");
 			}
 			break;
 		case"k":
@@ -300,7 +300,7 @@ public class BattleGame {
 				p1_ranged_attack_sysout();
 				printMap();
 			}else {
-				System.out.println("ºø¸Â¾Ò½À´Ï´Ù");
+				System.out.println("ë¹—ë§ì•˜ìŠµë‹ˆë‹¤");
 			}
 			break;
 		case"j":
@@ -310,7 +310,7 @@ public class BattleGame {
 				p1_ranged_attack_sysout();
 				printMap();
 			}else {
-				System.out.println("ºø¸Â¾Ò½À´Ï´Ù");
+				System.out.println("ë¹—ë§ì•˜ìŠµë‹ˆë‹¤");
 			}
 			break;
 		case"l":
@@ -320,17 +320,17 @@ public class BattleGame {
 				p1_ranged_attack_sysout();
 				printMap();
 			}else {
-				System.out.println("ºø¸Â¾Ò½À´Ï´Ù");
+				System.out.println("ë¹—ë§ì•˜ìŠµë‹ˆë‹¤");
 			}
 			break;
 			default:
-				System.out.println("Àß¸øÀÔ·ÂÇÏ¼Ì½À´Ï´Ù i,k,j,lÁß¿¡¼­ ÀÔ·ÂÇÏ½Ê½Ã¿À");
+				System.out.println("ì˜ëª»ì…ë ¥í•˜ì…¨ìŠµë‹ˆë‹¤ i,k,j,lì¤‘ì—ì„œ ì…ë ¥í•˜ì‹­ì‹œì˜¤");
 		}
 		
 	}
-	public static void game_p2_ranged_attack() {
+	public static void game_p2_ranged_attack() {í”Œë ˆì´ì–´2 ì›ê±°ë¦¬ ê³µê²©
 		printMap();
-        System.out.println("ÇÃ·¹ÀÌ¾î 2 °ø°İ (i:À§ ¿ø°Å¸®°ø°İ, k:¾Æ·¡ ¿ø°Å¸®°ø°İ, j:¿ŞÂÊ ¿ø°Å¸®°ø°İ, l:¿À¸¥ÂÊ ¿ø°Å¸®°ø°İ): ");
+        System.out.println("í”Œë ˆì´ì–´ 2 ê³µê²© (i:ìœ„ ì›ê±°ë¦¬ê³µê²©, k:ì•„ë˜ ì›ê±°ë¦¬ê³µê²©, j:ì™¼ìª½ ì›ê±°ë¦¬ê³µê²©, l:ì˜¤ë¥¸ìª½ ì›ê±°ë¦¬ê³µê²©): ");
 		String attack = scanner.nextLine();
 		boolean attacked = false;
 		switch(attack) {
@@ -341,7 +341,7 @@ public class BattleGame {
 				p2_ranged_attack_sysout();
 				printMap();
 			}else {
-				System.out.println("ºø¸Â¾Ò½À´Ï´Ù");
+				System.out.println("ë¹—ë§ì•˜ìŠµë‹ˆë‹¤");
 			}
 			break;
 		case"k":
@@ -351,7 +351,7 @@ public class BattleGame {
 				p2_ranged_attack_sysout();
 				printMap();
 			}else {
-				System.out.println("ºø¸Â¾Ò½À´Ï´Ù");
+				System.out.println("ë¹—ë§ì•˜ìŠµë‹ˆë‹¤");
 			}
 			break;
 		case"j":
@@ -361,7 +361,7 @@ public class BattleGame {
 				p2_ranged_attack_sysout();
 				printMap();
 			}else {
-				System.out.println("ºø¸Â¾Ò½À´Ï´Ù");
+				System.out.println("ë¹—ë§ì•˜ìŠµë‹ˆë‹¤");
 			}
 			break;
 		case"l":
@@ -371,11 +371,11 @@ public class BattleGame {
 				p2_ranged_attack_sysout();
 				printMap();
 			}else {
-				System.out.println("ºø¸Â¾Ò½À´Ï´Ù");
+				System.out.println("ë¹—ë§ì•˜ìŠµë‹ˆë‹¤");
 			}
 			break;
 			default:
-				System.out.println("Àß¸øÀÔ·ÂÇÏ¼Ì½À´Ï´Ù i,k,j,lÁß¿¡¼­ ÀÔ·ÂÇÏ½Ê½Ã¿À");
+				System.out.println("ì˜ëª»ì…ë ¥í•˜ì…¨ìŠµë‹ˆë‹¤ i,k,j,lì¤‘ì—ì„œ ì…ë ¥í•˜ì‹­ì‹œì˜¤");
 		}
 		
 	}
@@ -415,7 +415,7 @@ public class BattleGame {
 	   }
 	}
 
-	// p2 ¿òÁ÷ÀÓ ¸Ş¼Òµåµé
+	// p2 ì›€ì§ì„ ë©”ì†Œë“œë“¤
 	public static void p2_movement_up() {
 		   if(p2_row > 0) {
 			   map[p2_row][p2_col] = 0;
@@ -448,7 +448,7 @@ public class BattleGame {
 		   }
 		}
 
-	// ¸Ê Ãâ·ÂÀ» À§ÇÑ µµ¿ì¹Ì ¸Ş¼Òµå
+	// ë§µ ì¶œë ¥ì„ ìœ„í•œ ë„ìš°ë¯¸ ë©”ì†Œë“œ
 	public static void printMap() {
 	    for (int i = 0; i < 5; i++) {
 	        for (int j = 0; j < 5; j++) {
@@ -485,8 +485,8 @@ public class BattleGame {
 	
 	}
 	public static void p1_melee_acttack_sysout() {
-		System.out.println("p2ÀÇ Ã¼·ÂÀÌ 4 µ¥¹ÌÁö ¹Ş¾Ò½À´Ï´Ù");
-		System.out.println("p2ÀÇ Ã¼·ÂÀº :"+ p2hp);
+		System.out.println("p2ì˜ ì²´ë ¥ì´ 4 ë°ë¯¸ì§€ ë°›ì•˜ìŠµë‹ˆë‹¤");
+		System.out.println("p2ì˜ ì²´ë ¥ì€ :"+ p2hp);
 	}
 	public static void p1_ranged_attack_up() {
 		if(p1_row == p2_row+2 && p1_col == p2_col && p1_row > 0 ) {
@@ -510,8 +510,8 @@ public class BattleGame {
 	
 	}
 	public static void p1_ranged_attack_sysout() {
-		System.out.println("p2ÀÇ Ã¼·ÂÀÌ 2 µ¥¹ÌÁö ¹Ş¾Ò½À´Ï´Ù");
-		System.out.println("p2ÀÇ Ã¼·ÂÀº :"+ p2hp);
+		System.out.println("p2ì˜ ì²´ë ¥ì´ 2 ë°ë¯¸ì§€ ë°›ì•˜ìŠµë‹ˆë‹¤");
+		System.out.println("p2ì˜ ì²´ë ¥ì€ :"+ p2hp);
 	}
 	
 	//----------------------------------------------------------------------------------------------------------
@@ -541,8 +541,8 @@ public class BattleGame {
 	
 	}
 	public static void p2_melee_acttack_sysout() {
-		System.out.println("p1ÀÇ Ã¼·ÂÀÌ 4 µ¥¹ÌÁö ¹Ş¾Ò½À´Ï´Ù");
-		System.out.println("p1ÀÇ Ã¼·ÂÀº :"+ p1hp);
+		System.out.println("p1ì˜ ì²´ë ¥ì´ 4 ë°ë¯¸ì§€ ë°›ì•˜ìŠµë‹ˆë‹¤");
+		System.out.println("p1ì˜ ì²´ë ¥ì€ :"+ p1hp);
 	}
 	
 	public static void p2_ranged_attack_up() {
@@ -567,8 +567,8 @@ public class BattleGame {
 	
 	}
 	public static void p2_ranged_attack_sysout() {
-		System.out.println("p1ÀÇ Ã¼·ÂÀÌ 2 µ¥¹ÌÁö ¹Ş¾Ò½À´Ï´Ù");
-		System.out.println("p1ÀÇ Ã¼·ÂÀº :"+ p1hp);
+		System.out.println("p1ì˜ ì²´ë ¥ì´ 2 ë°ë¯¸ì§€ ë°›ì•˜ìŠµë‹ˆë‹¤");
+		System.out.println("p1ì˜ ì²´ë ¥ì€ :"+ p1hp);
 	}
 
 }
